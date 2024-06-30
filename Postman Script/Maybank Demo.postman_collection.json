@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "01994415-b5f8-4e3b-8a71-addeb372f908",
+		"name": "Maybank Demo",
+		"description": "This postman collection for Maybank assessment demo.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36625939"
+	},
+	"item": [
+		{
+			"name": "1. Create Person",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Bryan\",\r\n    \"email\":\"bryan@gmail.com\",\r\n    \"phoneNo\":\"0121212121\",\r\n    \"city\":\"Kuala Lumpur\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/createPerson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"createPerson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2. Get Person",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/getPerson/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"getPerson",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3. Update Person",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Another Name\",\r\n    \"email\":\"test@gmail.com\",\r\n    \"phoneNo\":\"0121212121\",\r\n    \"city\":\"Kuala Lumpur\",\r\n    \"personId\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/updatePerson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"updatePerson"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4. Create Transaction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"personId\":1,\r\n    \"amount\":100.32\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/createTransaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"createTransaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5. Get Transaction with Pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/getTransaction/1/page/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"getTransaction",
+						"1",
+						"page",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6. Retrieve 3rd Party User Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/person/retrieve3rdPartyUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"person",
+						"retrieve3rdPartyUsers"
+					]
+				},
+				"description": "\nThis endpoint retrieves third-party users' information. The response is in JSON format and has the following structure:\n\n```json\n{\n    \"result\": \"\",\n    \"message\": \"\",\n    \"thirdPartyUsers\": \"\"\n}\n```\n- `result` (string): Represents the result of the request.\n- `message` (string): Provides any additional information or error message.\n- `thirdPartyUsers` (string): Contains the third-party users' information.\n\nPlease note that the actual data within the `result`, `message`, and `thirdPartyUsers` fields will vary based on the specific request and the data available in the system.\n"
+			},
+			"response": []
+		}
+	]
+}
