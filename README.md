@@ -2,6 +2,12 @@
 
 This is a SpringBoot application to demo CRUD operations, MSSQL database and third party calling.
 
+## Tech Stack
+
+**Java:** JDK 21
+
+**Database:** MSSQL
+
 ## Run
 
 To run the program
