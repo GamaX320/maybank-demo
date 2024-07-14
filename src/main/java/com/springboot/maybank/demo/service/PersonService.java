@@ -184,7 +184,7 @@ public class PersonService {
 			Pageable pageable = PageRequest.of(page, PAGE_SIZE);
 			List<Transaction> transactionList = transactionRepository.findByPerson(personT.get(), pageable);
 			List<TransactionDTO> transactionDTOList = transactionList.stream()
-					.map(obj -> new TransactionDTO(obj.getId(), obj.getAmount(), parseDateTime(obj.getTransactionDate())))
+					.map(obj -> new TransactionDTO(obj.getTransactionId(), obj.getAmount(), parseDateTime(obj.getTransactionDate())))
 					.collect(Collectors.toList());
 			dto.setTransactionList(transactionDTOList);
 			dto.setResult(Result.SUCCESS.getCode());
@@ -239,7 +239,7 @@ public class PersonService {
 	}
 
 	private String parseDateTime(Timestamp t) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-DD HH:mm:ss");
 		Date date = new Date(t.getTime());
 		return sdf.format(date);
 	}
