@@ -1,5 +1,6 @@
 package com.springboot.maybank.demo.entity;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 import jakarta.persistence.CascadeType;
@@ -34,7 +35,7 @@ public class Transaction {
 	private String transactionId;
 
 	@Column(name = "amount")
-	private Long amount;
+	private BigDecimal amount;
 
 	@Column(name = "transaction_date")
 	private Timestamp transactionDate;

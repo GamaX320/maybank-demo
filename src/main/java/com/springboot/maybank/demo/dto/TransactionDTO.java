@@ -1,5 +1,7 @@
 package com.springboot.maybank.demo.dto;
 
+import java.math.BigDecimal;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
@@ -16,6 +18,6 @@ import lombok.Setter;
 public class TransactionDTO {
 
 	private String transactionId;
-	private Long amount;
+	private BigDecimal amount;
 	private String transactionDate;
 }

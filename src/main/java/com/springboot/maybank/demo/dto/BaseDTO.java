@@ -1,5 +1,6 @@
 package com.springboot.maybank.demo.dto;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -27,7 +28,7 @@ public class BaseDTO {
 
 	private Long personId;
 
-	private Long amount;
+	private BigDecimal amount;
 
 	private List<TransactionDTO> transactionList;
 
